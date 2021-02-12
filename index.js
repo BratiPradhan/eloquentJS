@@ -41,3 +41,27 @@ const power = function(base, exponent) {
 }
 
 console.log(power(2,20))
+
+
+// CLOSURE
+function multiplier(factor) {
+    return number => number * factor
+}
+
+let twice = multiplier(2);
+let thrice = multiplier(3);
+let numprovided = 6
+console.log('THE NUMBER: ' + numprovided)
+console.log( 'TWICE of the number ' + twice(numprovided));
+console.log( 'THRICE of the number ' + thrice(numprovided));
+
+
+
+function wrapValue(n) {
+    let local = n;
+    return () => local;
+}
+let wrap1 = wrapValue(1);
+let wrap2 = wrapValue(2);
+console.log(wrap1())
+console.log(wrap2())
